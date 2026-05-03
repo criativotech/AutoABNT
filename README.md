@@ -22,20 +22,7 @@ Este script em Python automatiza a configuração inicial de documentos acadêmi
 Certifique-se de que o suporte a scripts Python está instalado no seu sistema:
 Opensuse base
 ```bash
-sudo zypper up
-sudo zypper install libreoffice-script-provider-python
-```
-
-Ubuntu base
-```bash
-sudo apt update
-sudo apt install libreoffice-script-provider-python
-```
-
-Fedora base
-```bash
-sudo rpm update
-sudo rpm install libreoffice-script-provider-python
+install libreoffice-script-provider-python
 ```
 
 ### 2. Localização do Script
