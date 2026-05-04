@@ -1,71 +1,75 @@
-# AutoABNT
-Automatize a configuração inicial de documentos acadêmicos no LibreOffice Writer.
+## 🚀 AutoABNT: Guia de Instalação Rápida
 
-Este script em Python automatiza a configuração inicial de documentos acadêmicos no **LibreOffice Writer**, aplicando as normas mais recentes da ABNT (NBR 14724:2024). Ele configura margens, fontes, espaçamentos e recuos de parágrafo com um único clique.
+Este script automatiza a configuração de documentos conforme a **NBR 14724:2024** no LibreOffice Writer.
 
-# AutoABNT - Automação de Formatação NBR 14724:2024
+## 🛠️ 1. Onde colocar o script?
 
-## 📋 Funcionalidades Automáticas
+O caminho depende do seu sistema operacional e da forma como o LibreOffice foi instalado:
 
-* **Margens Padronizadas**: Superior/Esquerda (3 cm) e Inferior/Direita (2 cm).
-* **Tipografia**: Define a fonte padrão como Arial, tamanho 12.
-* **Espaçamento**: Configura o entre linhas como 1,5.
-* **Alinhamento**: Texto configurado como Justificado.
-* **Recuo de Parágrafo**: Aplica automaticamente o recuo de 1,25 cm na primeira linha do corpo do texto.
-* **Estilo de Títulos**: Remove o recuo de parágrafo dos títulos para alinhamento correto à esquerda.
+| **Sistema / Instalação** | **Caminho da Pasta de Scripts**                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------- |
+| **Linux com (Flatpak)**  | `~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user/Scripts/python/` |
+| **Linux com (APT)**      | `~/.config/libreoffice/4/user/Scripts/python/`                                     |
+| **Windows 10 / 11**      | `%APPDATA%\LibreOffice\4\user\Scripts\python\`                                     |
 
----
-
-## 🚀 Instruções de Instalação
-
-### 1. Requisitos do Sistema
-Certifique-se de que o suporte a scripts Python está instalado no seu sistema:
-Opensuse base
-```bash
-install libreoffice-script-provider-python
-```
-
-### 2. Localização do Script
-O LibreOffice reconhece macros de usuário em uma pasta específica. Crie o diretório se ele não existir:
-```bash
-mkdir -p ~/.config/libreoffice/4/user/Scripts/python/
-```
-
-Mova o arquivo `AutoABNT.py` para dentro desta pasta.
-
-### 3. Configuração de Segurança (CRÍTICO)
-Para que o script apareça e seja executado, você deve autorizar o local no LibreOffice:
-
-1.  Abra o LibreOffice Writer.
-2.  Vá em **Ferramentas > Opções > LibreOffice > Segurança**.
-3.  Clique em **Segurança de Macros > Fontes confiáveis**.
-4.  Clique em **Adicionar** e selecione a pasta: `~/.config/libreoffice/4/user/Scripts/python/`.
-
-### 4. Criação do Atalho
-1.  Vá em **Ferramentas > Personalizar > Barra de Ferramentas**.
-2.  Em **Categoria**, selecione **Macros**.
-3.  Navegue em: `Minhas macros > AutoABNT > AplicarFormatacaoABNT`.
-4.  Adicione o comando à barra de ferramentas desejada. Nessa etapa você também pode escolher um ícone para o botão.
+> **Nota:** Se as pastas `Scripts` e `python` não existirem, crie-as manualmente (respeitando as iniciais maiúsculas/minúsculas).
 
 ---
 
-## 📖 Guia de Uso Acadêmico
+## 🔑 2. Configuração de Segurança
 
-Embora o script realize a configuração base, a norma ABNT exige cuidados manuais em seções específicas:
+O LibreOffice bloqueia scripts por padrão. Caso o script não funcione, você deve autorizar a pasta:
 
-* **Quebras de Página**: Sempre utilize `Ctrl + Enter` para iniciar novos elementos (Resumo, Abstract, Sumário, Introdução).
-* **Citações Longas**: Para trechos com mais de 3 linhas, utilize manualmente o tamanho 10, espaçamento simples e recuo de 4 cm à esquerda.
-* **Paginação**: A contagem de páginas deve iniciar na Folha de Rosto, mas a exibição numérica deve começar apenas na Introdução.
-* **Referências**: Devem ser alinhadas apenas à esquerda e possuir espaçamento simples entre linhas.
+1. Abra o LibreOffice e vá em **Ferramentas > Opções > Segurança**.
+    
+2. Clique em **Segurança de Macros > Fontes confiáveis**.
+    
+3. Clique em **Adicionar** e selecione a pasta onde você colou o script.
+    
+
+---
+
+## 🖱️ 3. Criando o Botão de Execução
+
+1. Vá em **Ferramentas > Personalizar > Barra de ferramentas**.
+    
+2. No campo **Categoria**, selecione **Macros**.
+    
+3. Navegue em: `Minhas macros > AutoABNT > AplicarFormatacaoABNT`.
+    
+4. Adicione o comando à sua barra de ferramentas e clique em OK.
+
+Você pode (e deve) clicar em alterar e escolher a opção de ícone para escolher um que seja fácil de identificar na barra de ferramentas.
+    
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-* **Linguagem**: Python 3.
-* **API**: PyUNO (LibreOffice Bridge).
+## 📖 4. O que a Macro configura?
+
+Ao clicar no botão, o script aplica instantaneamente:
+
+- **Margens**: Superior/Esquerda (3 cm) e Inferior/Direita (2 cm).
+    
+- **Fonte**: Arial 12 com espaçamento 1,5.
+    
+- **Parágrafo**: Recuo de primeira linha de **1,25 cm**.
+    
+- **Títulos**: Remove o recuo para manter o alinhamento à esquerda.
+    
 
 ---
-*Este script é um ponto de partida para produtividade acadêmica. Verifique sempre a versão final do seu documento com o manual oficial da sua instituição.*
+
+## ⚠️ 5. Lembretes de Formatação Manual
+
+O script é o "pontapé inicial". Algumas tarefas ainda são manuais:
+
+- **Citações Longas**: Tamanho 10, espaço simples e recuo de 4 cm à esquerda.
+    
+- **Paginação**: Use a **Quebra Manual** (`Inserir > Mais quebras`) para que a numeração apareça apenas a partir da Introdução.
+    
+- **Referências**: Alinhar à esquerda e usar espaçamento simples.
+    
+- **Quebras**: Use `Ctrl + Enter` para iniciar novos elementos (Resumo, Capítulos, etc.).
 ---
 
 ## Autor
