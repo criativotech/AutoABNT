@@ -74,7 +74,7 @@ O script é o "pontapé inicial". Algumas tarefas ainda são manuais:
 
 ## Autor
 
--   **chiefmodoc**
+-   **criativotech**
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K01KWCZW)
 ---
